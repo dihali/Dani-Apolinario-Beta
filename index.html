@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fisioterapia Pélvica e Pilates em Toledo PR | Danielle Apolinário</title>
+  <meta name="description" content="Fisioterapeuta pélvica e instrutora de Pilates Clássico em Toledo PR. Tratamento de incontinência urinária, dor na relação, gestação e pós-parto. Atendimento presencial e online." />
+  <meta name="keywords" content="fisioterapia pélvica Toledo PR, pilates Toledo Paraná, fisioterapeuta pélvica Toledo, pilates gestante Toledo, incontinência urinária Toledo, dor na relação fisioterapia, Danielle Apolinário fisioterapeuta" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://fisiodaniapolinario.com.br/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fisioterapia Pélvica e Pilates em Toledo PR | Danielle Apolinário" />
+  <meta property="og:description" content="Especialista em Fisioterapia Pélvica e Pilates Clássico em Toledo PR." />
+  <meta property="og:image" content="https://i.ibb.co/yFJd3tLj/image-Pippit-202603130755.png" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --sage: #7C7C5E;
+      --sage-light: #A8A888;
+      --sage-bg: #F0EFE8;
+      --blush: #D4A99A;
+      --blush-light: #F0E4DF;
+      --cream: #FAF9F5;
+      --white: #FFFFFF;
+      --dark: #2A2A1E;
+      --text: #3D3D2D;
+      --soft: #7A7A60;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; cursor: none; }
+
+    /* CURSOR */
+    .cursor { width: 10px; height: 10px; background: var(--blush); border-radius: 50%; position: fixed; z-index: 9999; pointer-events: none; transition: transform 0.15s; }
+    .cursor-follower { width: 36px; height: 36px; border: 1px solid var(--blush); border-radius: 50%; position: fixed; z-index: 9998; pointer-events: none; transition: all 0.18s ease; opacity: 0.5; }
+
+    /* MARQUEE */
+    .marquee-wrap { background: var(--sage); padding: 22px 0; overflow: hidden; white-space: nowrap; }
+    .marquee-inner { display: inline-flex; animation: marquee 22s linear infinite; }
+    .marquee-item { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.9); font-weight: 600; padding: 0 36px; display: flex; align-items: center; gap: 14px; }
+    .marquee-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--blush); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+      padding: 18px 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(250,249,245,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(124,124,94,0.15);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+
+    .nav-logo { text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--sage); }
+
+    .nav-cta {
+      background: var(--sage); color: var(--white);
+      padding: 10px 24px;
+      text-decoration: none; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .nav-cta:hover { background: var(--sage-light); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+    .hamburger span { width: 22px; height: 1.5px; background: var(--dark); transition: 0.3s; display: block; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--cream); z-index: 98; padding: 100px 40px 40px; flex-direction: column; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--text); text-decoration: none; padding: 16px 0; border-bottom: 1px solid rgba(124,124,94,0.1); transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--sage); }
+    .mobile-menu a:last-child { border: none; color: var(--sage); font-size: 1rem; font-family: 'DM Sans', sans-serif; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 24px; }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh; padding-top: 72px;
+      position: relative; overflow: hidden;
+      display: flex; align-items: center;
+      background: var(--sage-bg);
+    }
+
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(240,239,232,0.92) 55%, rgba(240,239,232,0.3) 100%);
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      width: 55%; padding-left: 8%;
+    }
+
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 20px;
+      opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero-eyebrow-line { width: 32px; height: 1px; background: var(--blush); }
+
+    .hero-eyebrow-text {
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.3em;
+      color: var(--blush); font-weight: 600;
+    }
+
+    .hero-frase {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      color: var(--sage); font-style: italic;
+      margin-bottom: 16px; font-weight: 400;
+      opacity: 0; animation: fadeUp 0.8s 0.35s forwards;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      line-height: 1.0; color: var(--dark);
+      margin-bottom: 20px; font-weight: 400;
+      opacity: 0; animation: fadeUp 0.8s 0.5s forwards;
+    }
+    .hero-title em { color: var(--blush); font-style: italic; }
+
+    .hero-sub {
+      font-size: 0.92rem; color: var(--soft);
+      line-height: 1.8; max-width: 420px;
+      margin-bottom: 36px; font-weight: 300;
+      opacity: 0; animation: fadeUp 0.8s 0.7s forwards;
+    }
+
+    .hero-btns {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.8s 0.9s forwards;
+    }
+
+    .btn-primary {
+      background: var(--sage); color: var(--white);
+      padding: 14px 32px;
+      text-decoration: none; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { background: var(--sage-light); transform: translateY(-2px); }
+
+    .btn-outline {
+      border: 1.5px solid var(--sage); color: var(--sage);
+      padding: 14px 32px;
+      text-decoration: none; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .btn-outline:hover { background: var(--sage); color: var(--white); }
+
+    .hero-img {
+      position: absolute; right: 0; bottom: 0;
+      width: 42%; height: 92%;
+      object-fit: cover; object-position: top;
+      border-radius: 200px 200px 0 0;
+      opacity: 0; animation: fadeIn 1.2s 0.6s forwards;
+    }
+
+    /* DIFERENCIAIS */
+    .diferenciais {
+      background: var(--sage);
+      padding: 60px 8%;
+      margin-top: 56px;
+    }
+
+    .diferenciais-inner {
+      display: grid; grid-template-columns: auto 1fr 1fr 1fr 1fr;
+      gap: 48px; align-items: center;
+    }
+
+    .diferenciais-titulo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; color: var(--white);
+      font-style: italic; font-weight: 400;
+      white-space: nowrap;
+    }
+
+    .dif-item {
+      display: flex; flex-direction: column; gap: 8px;
+      padding-left: 32px;
+      border-left: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .dif-icon { font-size: 1.4rem; }
+
+    .dif-text {
+      font-size: 0.82rem; color: rgba(255,255,255,0.9);
+      font-weight: 400; line-height: 1.4;
+    }
+
+    .dif-text strong { display: block; color: var(--white); font-weight: 600; font-size: 0.85rem; margin-bottom: 2px; }
+
+    /* SOBRE */
+    #sobre {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+      padding: 120px 8%;
+      background: var(--white);
+    }
+
+    .sobre-img-wrap { position: relative; }
+    .sobre-img-wrap::before {
+      content: ''; position: absolute;
+      top: -16px; left: -16px;
+      width: 100%; height: 100%;
+      border: 1.5px solid rgba(212,169,154,0.4);
+      border-radius: 200px 200px 0 0;
+    }
+    .sobre-img {
+      width: 100%; border-radius: 200px 200px 0 0;
+      object-fit: cover; aspect-ratio: 3/4; display: block;
+    }
+
+    .sobre-badge {
+      position: absolute; bottom: 32px; right: -20px;
+      background: var(--blush); color: var(--white);
+      padding: 20px 24px; text-align: center;
+    }
+    .sobre-badge strong { font-size: 2rem; font-family: 'Cormorant Garamond', serif; display: block; }
+    .sobre-badge span { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    .eyebrow {
+      font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--blush); font-weight: 600; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--blush); }
+
+    .section-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.1; color: var(--dark); margin-bottom: 24px; font-weight: 400;
+    }
+    .section-h2 em { color: var(--sage); font-style: italic; }
+
+    .section-divider { width: 40px; height: 1.5px; background: var(--blush); margin-bottom: 24px; }
+
+    .sobre-p { font-size: 0.9rem; color: var(--soft); line-height: 1.85; margin-bottom: 16px; font-weight: 300; }
+
+    .sobre-quote {
+      border-left: 2px solid var(--blush);
+      padding: 16px 20px; margin: 24px 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-style: italic;
+      color: var(--sage); line-height: 1.6;
+      background: var(--blush-light);
+    }
+
+    .formacao-list { list-style: none; margin: 20px 0 28px; display: flex; flex-direction: column; gap: 10px; }
+    .formacao-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 0.82rem; line-height: 1.6; color: var(--text);
+    }
+    .formacao-list li::before {
+      content: ''; flex-shrink: 0;
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--blush); margin-top: 8px;
+    }
+
+    /* SERVIÇOS */
+    #servicos { padding: 120px 8%; background: var(--sage-bg); }
+
+    .servicos-top {
+      display: flex; justify-content: space-between;
+      align-items: flex-end; margin-bottom: 60px;
+    }
+
+    .servicos-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .servico-card {
+      background: var(--white); padding: 48px 40px;
+      position: relative; overflow: hidden;
+      transition: all 0.4s; border: 1px solid rgba(124,124,94,0.06);
+    }
+
+    .servico-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px; background: var(--blush);
+      transform: scaleX(0); transition: transform 0.4s; transform-origin: left;
+    }
+
+    .servico-card:hover::after { transform: scaleX(1); }
+    .servico-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(124,124,94,0.1); }
+
+    .servico-tag {
+      display: inline-block;
+      background: var(--blush-light); color: var(--blush);
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 6px 14px; margin-bottom: 20px;
+    }
+
+    .servico-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; color: var(--dark); margin-bottom: 16px; font-weight: 400;
+    }
+
+    .servico-items { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+    .servico-items li {
+      font-size: 0.82rem; color: var(--soft);
+      padding-left: 16px; position: relative; line-height: 1.5;
+    }
+    .servico-items li::before { content: '→'; position: absolute; left: 0; color: var(--blush); font-size: 0.72rem; }
+
+    /* VISÃO */
+    #visao { padding: 120px 8%; background: var(--white); text-align: center; }
+
+    .visao-text {
+      max-width: 680px; margin: 0 auto 60px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      line-height: 1.6; color: var(--dark);
+      font-style: italic; font-weight: 300;
+    }
+    .visao-text strong { color: var(--sage); font-style: normal; }
+
+    .visao-fotos {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+    }
+    .visao-foto {
+      aspect-ratio: 3/4; overflow: hidden;
+      border-radius: 100px 100px 0 0;
+      transition: transform 0.5s;
+    }
+    .visao-foto:hover { transform: translateY(-8px); }
+    .visao-foto img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* DEPOIMENTOS */
+    #depoimentos { padding: 120px 8%; background: var(--sage-bg); }
+
+    .depoimentos-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-top: 48px;
+    }
+
+    .depo-card {
+      background: var(--white); padding: 32px;
+      border-top: 2px solid var(--blush);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .depo-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(124,124,94,0.1); }
+
+    .depo-quote {
+      font-size: 2.5rem; color: var(--blush); line-height: 1;
+      font-family: 'Cormorant Garamond', serif; margin-bottom: 12px;
+    }
+    .depo-text { font-size: 0.85rem; line-height: 1.75; color: var(--text); margin-bottom: 20px; font-weight: 300; }
+    .depo-author { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); }
+
+    /* CURSO */
+    #curso {
+      padding: 120px 8%;
+      background: var(--dark);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+
+    .curso-desc { font-size: 0.9rem; line-height: 1.85; color: rgba(255,255,255,0.6); margin-bottom: 28px; font-weight: 300; }
+    .curso-preco { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--blush); margin-bottom: 24px; display: block; }
+    .curso-preco small { font-size: 1rem; font-family: 'DM Sans', sans-serif; }
+
+    .curso-modulos { list-style: none; margin-bottom: 32px; display: flex; flex-direction: column; gap: 16px; }
+    .curso-modulos li { display: flex; gap: 14px; align-items: flex-start; font-size: 0.85rem; color: rgba(255,255,255,0.75); }
+    .curso-modulos li span {
+      background: rgba(212,169,154,0.2); color: var(--blush);
+      width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;
+      font-size: 0.68rem; font-weight: 700; flex-shrink: 0;
+    }
+
+    .curso-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 200px 200px 0 0; }
+
+    /* CONTATO */
+    #contato { padding: 120px 8%; background: var(--white); text-align: center; }
+    .contato-sub { font-size: 0.92rem; color: var(--soft); max-width: 480px; margin: 0 auto 40px; line-height: 1.75; font-weight: 300; }
+
+    .contato-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .whatsapp-btn {
+      background: #25D366; color: var(--white);
+      padding: 16px 36px; text-decoration: none;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 10px;
+      transition: all 0.3s;
+    }
+    .whatsapp-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+    .whatsapp-btn svg { width: 20px; height: 20px; fill: white; }
+
+    .insta-btn {
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: var(--white); padding: 16px 36px; text-decoration: none;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 10px;
+      transition: all 0.3s;
+    }
+    .insta-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+    .atendimento-info { margin-top: 60px; display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
+    .atend-item { text-align: center; }
+    .atend-item .icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .atend-item strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--dark); margin-bottom: 4px; }
+    .atend-item span { font-size: 0.78rem; color: var(--soft); }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.4); text-align: center; padding: 40px 5%; font-size: 0.72rem; letter-spacing: 0.08em; }
+    footer a { color: var(--blush); text-decoration: none; }
+
+    /* FORM */
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--soft); }
+    .form-group input, .form-group select, .form-group textarea {
+      border: 1.5px solid rgba(124,124,94,0.2); padding: 12px 16px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
+      background: var(--cream); color: var(--dark); outline: none;
+      transition: border-color 0.3s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--sage); }
+    .form-group textarea { resize: vertical; }
+
+    /* WA FLOAT */
+    .wa-float {
+      position: fixed; bottom: 32px; right: 32px;
+      width: 56px; height: 56px; background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 32px rgba(37,211,102,0.4);
+      z-index: 50; transition: all 0.3s; text-decoration: none;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+    /* HOVER CARDS UPGRADE */
+    .servico-card { cursor: pointer; }
+    .depo-card { cursor: default; }
+
+    @media (max-width: 768px) {
+      body { cursor: auto; }
+      .cursor, .cursor-follower { display: none; }
+    }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeIn { from{opacity:0}to{opacity:1} }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      /* HERO MOBILE — sem foto, só cor de fundo */
+      #hero { min-height: 100svh; position: relative; padding-top: 72px; background: var(--sage-bg); }
+      .hero-overlay { display: none; }
+      .hero-img { display: none !important; }
+      .hero-content { width: 100%; padding: 40px 6% 60px; position: relative; z-index: 2; }
+      .hero-title { font-size: clamp(2.4rem, 9vw, 3.5rem); }
+      .hero-sub { font-size: 1rem; }
+
+      /* MARQUEE — espaço generoso */
+      .marquee-wrap { margin: 0; padding: 22px 0; }
+
+      /* DIFERENCIAIS */
+      .diferenciais { padding: 48px 6%; }
+      .diferenciais-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .diferenciais-titulo { display: none; }
+      .dif-item { padding-left: 16px; }
+
+      /* SOBRE */
+      #sobre { grid-template-columns: 1fr; gap: 48px; padding: 80px 6%; }
+      .sobre-badge { right: 0; }
+      .sobre-p { font-size: 0.95rem; }
+
+      /* SERVIÇOS */
+      #servicos { padding: 80px 6%; }
+      .servicos-top { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .servicos-grid { grid-template-columns: 1fr; }
+
+      /* FORM — 1 coluna */
+      #form-avaliacao { grid-template-columns: 1fr !important; }
+
+      /* VISÃO */
+      #visao { padding: 80px 6%; }
+      .visao-fotos { grid-template-columns: repeat(2, 1fr); }
+
+      /* DEPOIMENTOS */
+      #depoimentos { padding: 80px 6%; }
+      .depoimentos-grid { grid-template-columns: 1fr; }
+      .depo-text { font-size: 0.9rem; }
+
+      /* CURSO */
+      #curso { grid-template-columns: 1fr; padding: 80px 6%; gap: 48px; }
+      .curso-img { display: none; }
+
+      /* CONTATO */
+      #contato { padding: 80px 6%; }
+      .atendimento-info { gap: 32px; }
+
+      /* FOOTER */
+      footer { padding: 32px 5%; }
+
+      /* FONT SIZE UPGRADE */
+      .section-h2 { font-size: clamp(2.2rem, 7vw, 3rem); }
+      .hero-frase { font-size: 1.1rem; }
+      .dif-text { font-size: 0.88rem; }
+      .servico-title { font-size: 1.6rem; }
+      .servico-items li { font-size: 0.88rem; }
+      .sobre-quote { font-size: 1.15rem; }
+      .formacao-list li { font-size: 0.88rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <img src="https://i.ibb.co/kgptwwRV/image-Pippit-202603130812.png" alt="Danielle Apolinário" style="height:48px;width:auto;display:block;" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#curso">Curso</a></li>
+  </ul>
+  <a href="https://wa.me/5545999180697?text=Olá%20Danielle!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." class="nav-cta" target="_blank">Agendar Consulta</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#sobre" onclick="closeMobile()">Sobre</a>
+  <a href="#servicos" onclick="closeMobile()">Serviços</a>
+  <a href="#depoimentos" onclick="closeMobile()">Depoimentos</a>
+  <a href="#curso" onclick="closeMobile()">Curso</a>
+  <a href="https://wa.me/5545999180697?text=Olá%20Danielle!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" onclick="closeMobile()">Agendar Consulta →</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span class="hero-eyebrow-text">Toledo - PR · Presencial e Online</span>
+    </div>
+    <div class="hero-frase">Força, equilíbrio e função restaurada.</div>
+    <h1 class="hero-title">
+      Ajudo homens e mulheres<br>
+      a se reconectarem com<br>
+      o próprio corpo —<br>
+      <em>sem dor, sem medo.</em>
+    </h1>
+    <p class="hero-sub">Sou instrutora de Pilates Clássico e Fisioterapeuta Pélvica, especializada em saúde íntima. Meu trabalho vai além do exercício: é sobre devolver autonomia, conforto e qualidade de vida no dia a dia.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/5545999180697?text=Olá%20Danielle!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." class="btn-primary" target="_blank">✦ Agendar Consulta</a>
+      <a href="#servicos" class="btn-outline">Ver Serviços</a>
+    </div>
+  </div>
+  <img src="https://i.ibb.co/rRkxTb3B/image-Pippit-202603130739.png" alt="Danielle Apolinário fisioterapeuta" class="hero-img" onerror="this.style.display='none'" />
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="marquee-item">Fisioterapia Pélvica<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Pilates Clássico<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Saúde Íntima<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Atendimento Online<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Gestação e Pós-Parto<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Toledo · PR<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Fisioterapia Pélvica<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Pilates Clássico<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Saúde Íntima<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Atendimento Online<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Gestação e Pós-Parto<span class="marquee-dot"></span></span>
+    <span class="marquee-item">Toledo · PR<span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- DIFERENCIAIS -->
+<div class="diferenciais reveal">
+  <div class="diferenciais-inner">
+    <div class="diferenciais-titulo">Aqui você<br>vai encontrar:</div>
+    <div class="dif-item">
+      <div class="dif-icon">🤝</div>
+      <div class="dif-text"><strong>Atendimento individualizado</strong>Cada corpo tem sua história e seu tempo</div>
+    </div>
+    <div class="dif-item">
+      <div class="dif-icon">💛</div>
+      <div class="dif-text"><strong>Olhar acolhedor</strong>Sem julgamentos, com escuta atenta</div>
+    </div>
+    <div class="dif-item">
+      <div class="dif-icon">🔬</div>
+      <div class="dif-text"><strong>Baseado em evidência</strong>Tratamento fundamentado e eficaz</div>
+    </div>
+    <div class="dif-item">
+      <div class="dif-icon">✨</div>
+      <div class="dif-text"><strong>Tudo pensado para você.</strong>Do início ao fim do tratamento</div>
+    </div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="sobre-img-wrap reveal-left">
+    <img src="https://i.ibb.co/yFJd3tLj/image-Pippit-202603130755.png" alt="Danielle Apolinário" class="sobre-img" />
+    <div class="sobre-badge">
+      <strong>+</strong>
+      <span>Pélvica & Pilates</span>
+    </div>
+  </div>
+  <div class="reveal-right d1">
+    <div class="eyebrow">Sobre mim</div>
+    <h2 class="section-h2">Fisioterapeuta Pélvica<br>e <em>Instrutora de Pilates</em></h2>
+    <div class="section-divider"></div>
+    <p class="sobre-p">Seu corpo dá sinais — e você não precisa ignorar nenhum deles. A saúde da sua pelve influencia diretamente na sua qualidade de vida, na sua confiança, no seu controle urinário e até no seu prazer.</p>
+    <p class="sobre-p">E aqui o movimento entra como aliado também. O Pilates Clássico é uma ferramenta poderosa pra fortalecer, equilibrar e reconectar corpo e mente — inclusive na gestação e no pós-parto.</p>
+    <div class="sobre-quote">"No meu trabalho, eu atuo com fisioterapia pélvica e pilates de forma individualizada, respeitando o seu tempo, sua história e o que o seu corpo precisa hoje."</div>
+    <p class="sobre-p">Não é só sobre exercício. É sobre você voltar a se sentir bem no seu próprio corpo, sem dor, sem desconforto e com mais segurança no dia a dia.</p>
+    <ul class="formacao-list">
+      <li>Graduação em Fisioterapia — UNIOESTE</li>
+      <li>Pós-Graduação em Fisioterapia Pélvica e Uroginecológica — Inspirar</li>
+      <li>Formação Completa em Pilates Clássico — Programa Dive In Corpus, 3ª Geração</li>
+      <li>Formada nos 3 níveis de LPF (Low Pressure Fitness)</li>
+      <li>Participo de cursos, congressos, workshops e aulas privadas com diversos professores renomados em Pilates e Fisioterapia Pélvica</li>
+    </ul>
+    <a href="https://wa.me/5545999180697?text=Olá%20Danielle!%20Quero%20saber%20mais." class="btn-primary" target="_blank">Falar com a Danielle</a>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="servicos-top reveal">
+    <div>
+      <div class="eyebrow">Como posso te ajudar</div>
+      <h2 class="section-h2">Serviços <em>Especializados</em></h2>
+    </div>
+    <a href="https://wa.me/5545999180697?text=Olá%20Danielle!%20Quero%20agendar." class="btn-primary" target="_blank">Agendar agora</a>
+  </div>
+  <div class="servicos-grid">
+    <div class="servico-card reveal d1">
+      <div class="servico-tag">Saúde Pélvica</div>
+      <h3 class="servico-title">Fisioterapia Pélvica</h3>
+      <ul class="servico-items">
+        <li>Gestação, parto e pós-parto</li>
+        <li>Incontinência urinária e fecal</li>
+        <li>Pré e pós cirúrgico</li>
+        <li>Endometriose</li>
+        <li>Saúde pélvica masculina</li>
+      </ul>
+      <a href="https://wa.me/5545999180697?text=Olá%20Danielle!%20Tenho%20interesse%20em%20Fisioterapia%20Pélvica." class="btn-primary" style="font-size:0.72rem;padding:12px 24px;" target="_blank">Agendar →</a>
+    </div>
+    <div class="servico-card reveal d2">
+      <div class="servico-tag">Pilates Clássico</div>
+      <h3 class="servico-title">Pilates para Todos</h3>
+      <ul class="servico-items">
+        <li>Pilates clássico na gestação</li>
+        <li>Condicionamento físico</li>
+        <li>Prevenção e alívio de dores</li>
+        <li>Equilíbrio físico e mental</li>
+      </ul>
+      <a href="https://wa.me/5545999180697?text=Olá%20Danielle!%20Tenho%20interesse%20em%20Pilates." class="btn-primary" style="font-size:0.72rem;padding:12px 24px;" target="_blank">Agendar →</a>
+    </div>
+    <div class="servico-card reveal d3">
+      <div class="servico-tag">Sessões Online</div>
+      <h3 class="servico-title">Atendimento Remoto</h3>
+      <ul class="servico-items">
+        <li>Pilates online para gestantes</li>
+        <li>Avaliação e orientação individual</li>
+        <li>Exercícios guiados em vídeo</li>
+        <li>Acompanhamento personalizado em Fisioterapia Pélvica</li>
+      </ul>
+      <a href="https://wa.me/5545999180697?text=Olá%20Danielle!%20Tenho%20interesse%20em%20sessões%20online." class="btn-primary" style="font-size:0.72rem;padding:12px 24px;" target="_blank">Quero Online →</a>
+    </div>
+    <div class="servico-card reveal d4" style="background:var(--sage-bg)">
+      <div class="servico-tag">Pré-avaliação Gestantes</div>
+      <h3 class="servico-title">Preencha antes da sua <em style="color:var(--sage);font-style:italic">primeira sessão</em></h3>
+      <div id="form-avaliacao" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.5rem;margin-top:24px;">
+        <div class="form-group"><label>Nome completo *</label><input type="text" id="f-nome" placeholder="Seu nome completo" /></div>
+        <div class="form-group"><label>Data de nascimento *</label><input type="date" id="f-nasc" /></div>
+        <div class="form-group"><label>WhatsApp *</label><input type="tel" id="f-whats" placeholder="(xx) 9xxxx-xxxx" /></div>
+        <div class="form-group"><label>Cidade / Estado *</label><input type="text" id="f-cidade" placeholder="Ex: Toledo - PR" /></div>
+        <div class="form-group"><label>Semana de gestação *</label><input type="text" id="f-semana" placeholder="Ex: 20 semanas" /></div>
+        <div class="form-group"><label>Primeira gestação? *</label><select id="f-primeira"><option value="">Selecione</option><option>Sim</option><option>Não</option></select></div>
+        <div class="form-group"><label>Realiza pré-natal? *</label><select id="f-prenatal"><option value="">Selecione</option><option>Sim</option><option>Não</option></select></div>
+        <div class="form-group"><label>Já fez Pilates ou Fisioterapia? *</label><select id="f-experiencia"><option value="">Selecione</option><option>Sim</option><option>Não</option></select></div>
+        <div class="form-group"><label>Tipo de atendimento *</label><select id="f-tipo"><option value="">Selecione</option><option>Individual</option><option>Em dupla</option></select></div>
+        <div class="form-group"><label>Disponibilidade *</label><select id="f-horario"><option value="">Selecione</option><option>Manhã</option><option>Tarde</option><option>Noite</option></select></div>
+        <div class="form-group" style="grid-column:1/-1"><label>Intercorrências ou condição de risco</label><textarea id="f-obs" placeholder="Descreva se houver alguma condição especial..." rows="3"></textarea></div>
+      </div>
+      <button onclick="enviarFormWhatsApp()" class="btn-primary" style="margin-top:20px;border:none;cursor:pointer;">✦ Enviar pelo WhatsApp</button>
+      <p style="font-size:0.7rem;color:var(--soft);margin-top:8px;">O WhatsApp da Dani abrirá com suas respostas preenchidas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VISÃO -->
+<section id="visao">
+  <div class="eyebrow reveal" style="justify-content:center;">Nossa Visão</div>
+  <p class="visao-text reveal d1">
+    "Não é só exercício —
+    é recuperar a <strong>autonomia</strong> sobre o próprio corpo.
+    Quando a mente entende que o movimento é seguro,
+    o corpo responde com leveza."
+  </p>
+  <div class="visao-fotos">
+    <div class="visao-foto reveal d1"><img src="https://i.ibb.co/DgpQPmkY/image-Pippit-202603130757.png" alt="Fisioterapia pélvica Toledo PR" /></div>
+    <div class="visao-foto reveal d2"><img src="https://i.ibb.co/Q5GgvFG/image-Pippit-202603130759.png" alt="Pilates clássico Toledo PR" /></div>
+    <div class="visao-foto reveal d3"><img src="https://i.ibb.co/HTHK1PtG/image-Pippit-202603130803.png" alt="Pilates para gestantes Toledo PR" /></div>
+    <div class="visao-foto reveal d4"><img src="https://i.ibb.co/ccCYcXVZ/image-Pippit-202603130805.png" alt="Resultado fisioterapia pélvica" /></div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="eyebrow reveal">Resultados Reais</div>
+  <h2 class="section-h2 reveal d1">O que dizem<br>minhas <em>pacientes</em></h2>
+  <div class="depoimentos-grid">
+    <div class="depo-card reveal d1">
+      <div class="depo-quote">"</div>
+      <p class="depo-text">Além do foco nas minhas dores da lombar, a dinâmica de fazer movimentar o corpo todo faz com que sinta mais esses locais que não costumo sentir. Parece que deu mais firmeza em fazer as coisas do dia a dia.</p>
+      <div class="depo-author">Paciente — Pilates Clássico</div>
+    </div>
+    <div class="depo-card reveal d2">
+      <div class="depo-quote">"</div>
+      <p class="depo-text">Dani, você é sensacional! Muito obrigada por tudo. Você é uma profissional excelente e uma pessoa incrível! Nem sei como agradecer por tudo.</p>
+      <div class="depo-author">Paciente — Fisioterapia Pélvica</div>
+    </div>
+    <div class="depo-card reveal d3">
+      <div class="depo-quote">"</div>
+      <p class="depo-text">Fiquei muito feliz com a primeira aula. Você de cara conseguiu identificar os pontos que tenho dificuldade. Finalmente encontrei a atividade física que vai me ajudar nisso.</p>
+      <div class="depo-author">Paciente — Primeira Aula</div>
+    </div>
+    <div class="depo-card reveal d1">
+      <div class="depo-quote">"</div>
+      <p class="depo-text">Bom dia Dra, a noite foi tranquila. Não tive qualquer escapadinha. Tudo sequinho.</p>
+      <div class="depo-author">Paciente — Incontinência Urinária</div>
+    </div>
+    <div class="depo-card reveal d2">
+      <div class="depo-quote">"</div>
+      <p class="depo-text">Fiquei muito preocupada, mas foi tudo super tranquilo. DEU TUDO CERTO! Eu nem acredito de verdade mesmo.</p>
+      <div class="depo-author">Paciente — Saúde Pélvica</div>
+    </div>
+    <div class="depo-card reveal d3">
+      <div class="depo-quote">"</div>
+      <p class="depo-text">Oii Dani, só passando para dar um feedback. Você de cara conseguiu identificar os pontos que me atrapalham. Finalmente encontrei a atividade certa!</p>
+      <div class="depo-author">Paciente — Avaliação Inicial</div>
+    </div>
+  </div>
+</section>
+
+<!-- CURSO -->
+<section id="curso">
+  <div class="reveal">
+    <div class="eyebrow" style="color:rgba(212,169,154,0.8)">Curso Online</div>
+    <h2 class="section-h2" style="color:white;">Movimento Inteligente<br>na <em style="color:var(--blush)">Gestação</em></h2>
+    <div class="section-divider"></div>
+    <p class="curso-desc">Pilates e Musculação sem colocar seu bebê em risco. Criado especialmente para gestantes por uma fisioterapeuta e instrutora de pilates especializada em saúde da gestante.</p>
+    <ul class="curso-modulos">
+      <li><span>1</span><div><strong style="color:rgba(255,255,255,0.9)">Pilates na Gestação</strong><br>Fortalecimento, controle e estabilidade com segurança total para gestantes.</div></li>
+      <li><span>2</span><div><strong style="color:rgba(255,255,255,0.9)">Musculação para Gestantes</strong><br>Treinos adaptados a cada fase da gestação — com segurança e eficácia.</div></li>
+    </ul>
+    <div class="curso-preco"><small>por apenas </small>R$ 97</div>
+    <a href="https://hotmart.com/pt-br/marketplace/produtos/pilates-e-musculacao-sem-colocar-seu-bebe-em-risco/P99316562I" class="btn-primary" target="_blank">✦ Quero o Curso</a>
+  </div>
+  <div class="reveal d2">
+    <img src="https://i.ibb.co/ccvj3LkB/image-Pippit-202603130818.png" alt="Curso pilates gestantes" class="curso-img" onerror="this.style.display='none'" />
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="eyebrow reveal" style="justify-content:center;">Vamos conversar?</div>
+  <h2 class="section-h2 reveal d1" style="text-align:center;">Entre em <em>Contato</em></h2>
+  <div class="section-divider reveal" style="margin:0 auto 32px;"></div>
+  <p class="contato-sub reveal d2">Atendimento presencial em Toledo-PR e online para todo o Brasil. Agende sua consulta e dê o primeiro passo.</p>
+  <div class="contato-btns reveal d3">
+    <a href="https://wa.me/5545999180697?text=Olá%20Danielle!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar." class="whatsapp-btn" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp (45) 99918-0697
+    </a>
+    <a href="https://instagram.com/fisiodaniapolinarioo" class="insta-btn" target="_blank">📸 @fisiodaniapolinarioo</a>
+  </div>
+  <div class="atendimento-info reveal d4">
+    <div class="atend-item"><div class="icon">📍</div><strong>Toledo - PR</strong><span>Atendimento presencial</span></div>
+    <div class="atend-item"><div class="icon">💻</div><strong>Online</strong><span>Todo o Brasil</span></div>
+    <div class="atend-item"><div class="icon">🤰</div><strong>Gestantes</strong><span>Atendimento especializado</span></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="https://i.ibb.co/kgptwwRV/image-Pippit-202603130812.png" alt="Danielle Apolinário" style="height:44px;width:auto;margin:0 auto 16px;filter:brightness(0) invert(0.6);display:block;" />
+  <p>© 2025 Danielle Apolinário — Fisioterapia Pélvica e Pilates &nbsp;|&nbsp; Desenvolvido por <a href="#" target="_blank">DI-HALI DIGITAL</a></p>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/5545999180697?text=Olá%20Danielle!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar." target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // CURSOR
+  const cursor = document.getElementById('cursor');
+  const follower = document.getElementById('cursorFollower');
+  let mx=0,my=0,fx=0,fy=0;
+  document.addEventListener('mousemove', e => {
+    mx=e.clientX; my=e.clientY;
+    cursor.style.left = mx-5+'px';
+    cursor.style.top = my-5+'px';
+  });
+  function animateCursor() {
+    fx += (mx-fx)*0.12; fy += (my-fy)*0.12;
+    follower.style.left = fx-18+'px';
+    follower.style.top = fy-18+'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor.style.transform='scale(2.5)'; follower.style.transform='scale(1.5)'; });
+    el.addEventListener('mouseleave', () => { cursor.style.transform='scale(1)'; follower.style.transform='scale(1)'; });
+  });
+
+  // FORM
+  function enviarFormWhatsApp() {
+    const get = id => document.getElementById(id)?.value?.trim() || '—';
+    const nome=get('f-nome'),nasc=get('f-nasc'),whats=get('f-whats'),cidade=get('f-cidade'),semana=get('f-semana'),primeira=get('f-primeira'),prenatal=get('f-prenatal'),exp=get('f-experiencia'),tipo=get('f-tipo'),horario=get('f-horario'),obs=get('f-obs')||'Nenhuma';
+    if(!nome||nome==='—'||!whats||whats==='—'){alert('Por favor, preencha ao menos seu nome e WhatsApp.');return;}
+    const msg=`🌸 *PRÉ-AVALIAÇÃO GESTANTE*\n\n👤 *Nome:* ${nome}\n🎂 *Nascimento:* ${nasc}\n📱 *WhatsApp:* ${whats}\n📍 *Cidade:* ${cidade}\n\n🤰 *Semana de gestação:* ${semana}\n🔁 *Primeira gestação:* ${primeira}\n🏥 *Faz pré-natal:* ${prenatal}\n🧘 *Experiência anterior:* ${exp}\n\n📅 *Tipo de atendimento:* ${tipo}\n⏰ *Disponibilidade:* ${horario}\n\n📋 *Intercorrências:* ${obs}`;
+    window.open('https://wa.me/5545999180697?text='+encodeURIComponent(msg),'_blank');
+  }
+
+  // HAMBURGER
+  const hamburger=document.getElementById('hamburger');
+  const mobileMenu=document.getElementById('mobileMenu');
+  hamburger.addEventListener('click',()=>{hamburger.classList.toggle('open');mobileMenu.classList.toggle('open');});
+  function closeMobile(){hamburger.classList.remove('open');mobileMenu.classList.remove('open');}
+
+  // SCROLL
+  window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);});
+
+  // REVEAL — inclui direcional
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>observer.observe(el));
+
+  // CONTADOR BADGE
+  function animateCounter(el, target) {
+    let count = 0;
+    const step = Math.ceil(target / 40);
+    const timer = setInterval(() => {
+      count += step;
+      if (count >= target) { count = target; clearInterval(timer); }
+      el.textContent = '+' + count;
+    }, 40);
+  }
+  const badgeObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const strong = e.target.querySelector('.sobre-badge strong');
+        if (strong) { animateCounter(strong, 5); badgeObserver.unobserve(e.target); }
+      }
+    });
+  }, {threshold: 0.5});
+  document.querySelectorAll('.sobre-img-wrap').forEach(el => badgeObserver.observe(el));
+</script>
+</body>
+</html>
